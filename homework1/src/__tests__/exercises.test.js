@@ -1,15 +1,15 @@
 import { ok, deepEqual, match, throws, fail } from 'assert';
 import { randomBytes } from 'crypto';
 import {
-  //change,
-  //stretched,
-  //scramble,
+  change,
+  stretched,
+  scramble,
   say,
   powers,
   interleave,
-  //powersGenerator,
+  powersGenerator,
   makeCryptoFunctions,
-  //pokemonSprites,
+  pokemonSprites,
 } from '../exercises';
 
 describe('change', () => {
