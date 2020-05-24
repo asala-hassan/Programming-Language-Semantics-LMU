@@ -2,6 +2,7 @@ import crypto from 'crypto';
 import fetch from 'node-fetch';
 
 
+
 export function change(amount) {
   if (amount < 0) {
     throw new RangeError('Non-negative amounts required');
@@ -15,6 +16,7 @@ export function change(amount) {
 }
 
 
+
 export function stretched(s) {
   let result = '';
   let withoutSpaces = s.replace(/\s+/g, '');
@@ -23,6 +25,7 @@ export function stretched(s) {
   }
   return result;
 }
+
 
 
 export function scramble(s) {
@@ -40,11 +43,13 @@ export function scramble(s) {
 }
 
 
+
 export function powers(base, limit, callback) {
-  for (let p = 1; p <= limit; p *= base) {
-    callback(p);
+  for (let power = 1; power <= limit; power *= base) {
+    callback(power);
   }
 }
+
 
 
 export function* powersGenerator(base, limit) {
@@ -56,42 +61,44 @@ export function* powersGenerator(base, limit) {
 }
 
 
+
 export function say(word) {
-  if (word === undefined) {
-    return '';
-  }
-  return nextWord => {
-    if (nextWord === undefined) {
-      return word;
+    if (word === undefined) {
+      return '';
     }
-    return say(word + ' ' + nextWord);
-  };
-}
+    return nextWord => {
+      if (nextWord === undefined) {
+        return word;
+      }
+      return say(word + ' ' + nextWord);
+    };
+  }
 
 
 
- export function interleave(a, ...b){
+ export function interleave(a, ...b){ // idea came from https://stackoverflow.com/questions/13253856/merge-two-arrays-so-that-the-values-alternate
     let result = [];
     let i = 0;
-    let k = 0;
-    for(i = 0;i<a.length && i<b.length;i++){
-        result[k++] = a[i];
-        result[k++] = b[i];
+    let j = 0;
+    for(i = 0;i < a.length && i< b.length;i++){
+        result[j++] = a[i];
+        result[j++] = b[i];
     }
     if(a.length == i){
-        while(i<b.length){
-            result[k++] = b[i];
+        while(i < b.length){
+            result[j++] = b[i];
             i++;
         }
     }
     else{
-        while(i<a.length){
-            result[k++] = a[i];
+        while(i < a.length){
+            result[j++] = a[i];
             i++;
         }
     }
     return result;
 }
+
 
 
 export function makeCryptoFunctions(cryptoKey, cryptoAlgorithm, iv) {
@@ -110,6 +117,7 @@ export function makeCryptoFunctions(cryptoKey, cryptoAlgorithm, iv) {
   }
   return [encrypt, decrypt];
 }
+
 
 
 export function pokemonSprites(name) {
