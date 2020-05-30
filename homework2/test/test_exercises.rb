@@ -15,12 +15,12 @@ class TestExercises < Test::Unit::TestCase
     assert_raise(RangeError) {change(-50)}
   end
 
-  #def test_stretched
-    #assert_equal(''.stretched, '')
-    #assert_equal("H e   l\t\tlo".stretched, 'Heelllllllooooo')
-    #assert_equal('$#'.stretched, '$##')
-    #assert_equal('       '.stretched, '')
-  #end
+  def test_stretched
+    assert_equal(''.stretched, '')
+    assert_equal("H e   l\t\tlo".stretched, 'Heelllllllooooo')
+    assert_equal('$#'.stretched, '$##')
+    assert_equal('       '.stretched, '')
+  end
 
   def test_scramble
     are_anagrams = ->(s, t) { s.split('').sort().join('') == t.split('').sort().join('') }
@@ -59,21 +59,22 @@ class TestExercises < Test::Unit::TestCase
     assert_raise(FiberError) {g2.resume}
   end
 
-  #def test_say
-    #assert_equal(say[], '')
-    #assert_equal(say['hi'][], 'hi')
-    #assert_equal(say['hi']['there'][], 'hi there')
-    #assert_equal(say['hello']['my']['name']['is']['Colette'][], 'hello my name is Colette')
-  #end
+  def test_say
+    assert_equal(say[], '')
+    assert_equal(say['hi'][], 'hi')
+    assert_equal(say['hi']['there'][], 'hi there')
+    assert_equal(say['hello']['my']['name']['is']['Colette'][], 'hello my name is Colette')
+  end
 
-  #def test_interleave
-    #assert_equal([].interleave(), [])
-    #assert_equal([1, 4, 6].interleave(), [1, 4, 6])
-    #assert_equal([].interleave(2, 3), [2, 3])
-    #assert_equal([1].interleave(9), [1, 9])
-    #assert_equal([8, 8, 3, 9].interleave(1), [8, 1, 8, 3, 9])
-   # assert_equal([2].interleave(7, '8', {}), [2, 7, '8', {}])
- # end
+  def test_interleave
+    assert_equal([].interleave(), [])
+    assert_equal([1, 4, 6].interleave(), [1, 4, 6])
+    assert_equal([].interleave(2, 3), [2, 3])
+    assert_equal([1].interleave(9), [1, 9])
+    assert_equal([8, 8, 3, 9].interleave(1), [8, 1, 8, 3, 9])
+    assert_equal([2].interleave(7, '8', {}), [2, 7, '8', {}])
+  end
+
 
   def test_pokemon_sprites
     ditto_sprites = pokemon_sprites('ditto')
