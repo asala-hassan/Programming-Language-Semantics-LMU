@@ -17,19 +17,17 @@ change(Amount) ->
        {true, [Quarters, Dimes, Nickels, Pennies]}
     end.
   
-
 sumOfCubesOfOdds(List)-> 
   lists:sum([X*X*X || X <- List, X rem 2 =/= 0]).
-
-  
+ 
 powers(Base, Limit, Pid)->
-  helper(Base, Limit, Pid, 1).
+  nextPower(Base, Limit, Pid, 1).
 
-helper(Base, Limit, Pid, Power) when Power =< Limit ->
+nextPower(Base, Limit, Pid, Power) when Power =< Limit ->
   Pid ! Power,
-  helper(Base, Limit, Pid, Power * Base);
-  helper(_, _,  _, _) ->
-    ok.
+  nextPower(Base, Limit, Pid, Power * Base);
+nextPower(_, _,  _, _) ->
+  ok.
 
 
 
