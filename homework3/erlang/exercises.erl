@@ -20,6 +20,7 @@ change(Amount) ->
 sumOfCubesOfOdds(List)-> 
   lists:sum([X*X*X || X <- List, X rem 2 =/= 0]).
  
+% My colleague Mansi helped me in writing this function(powers).
 powers(Base, Limit, Pid)->
   nextPower(Base, Limit, Pid, 1).
 
