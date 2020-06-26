@@ -17,6 +17,3 @@ serve() ->
       io:format("I am bored", [])
  end,
 serve().
-%start() ->
-    %Pid = spawn(fun() -> strangeserver() end),
-    %Pid ! {multiply, 6, 10, Pid}.
