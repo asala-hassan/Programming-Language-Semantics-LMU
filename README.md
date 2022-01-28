@@ -1,3 +1,3 @@
-# Programming Language Semantics Course
-this repo contains my solutions for different assignemnts problems which written in Ruby, Go, JavaScript, and Erlang
+# Programming Language Semantics
+This repo contains implemenation of different functions in Ruby, Go, JavaScript, Rust, and Erlang
  
