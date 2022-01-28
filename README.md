@@ -1,2 +1,3 @@
-# lmu-cmsi-585
-My homework for 585
+# Programming Language Semantics Course
+this repo contains my solutions for different assignemnts problems which written in Ruby, Go, JavaScript, and Erlang
+ 
